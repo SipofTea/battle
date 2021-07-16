@@ -1,5 +1,6 @@
 <div style='text-align: center; padding: 100px; font-family:arial; font-size: xx-large'> 
-    <h1><span style='color:blue'><%= @player_1.name %></span> vs. <span style='color:red'><%= @player_2.name %></span></h1>
-    <h2><span style='color:blue'> Hitpoints: <%= @player_1.hit_points %></span> <span style='color:red'>Hitpoints: <%= @player_1.hit_points %></span></h2>
+    <h1><span style='color:blue'><%= @game.player_1.name %></span> vs. <span style='color:red'><%= @game.player_2.name %></span></h1>
+    <h2><span style='color:blue'> Hitpoints: <%= @game.player_1.hit_points %></span> <span style='color:red'>Hitpoints: <%= @game.player_2.hit_points %></span></h2>
+    <h2><%= @game.player_turn.name %>'s turn!</h2>
     <a href="/attack">Attack!</a>
 </div>
