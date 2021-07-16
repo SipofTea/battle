@@ -2,9 +2,16 @@ require 'game'
 require 'player'
 
 describe Game do
-  let(:player) { Player.new('player') }
+  let(:test_player_1) { Player.new('Scott Pilgrim') }
+  let(:test_player_2) { Player.new('The World') }
+  subject(:game) { Game.new(test_player_1, test_player_2) }
+  
+  it 'is initialized with two players' do
+    expect(game.player_1.name).to eq('Scott Pilgrim')
+    expect(game.player_2.name).to eq('The World')
+    end
   it '#attack' do
-    subject.attack(player)
-    expect(player.hit_points).to eq(50)
+    game.attack(test_player_1)
+    expect(test_player_1.hit_points).to eq(50)
   end
 end
