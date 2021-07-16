@@ -1,5 +1,11 @@
+
 <div style='text-align: center; padding: 100px; font-family:arial; font-size: xx-large'> 
-<%= @game.player_1.name %> attacked <%= @game.player_2.name %>!
-<%= @game.player_2.name %> now has <%= @game.player_2.hit_points %> hitpoints!
-<form action='/switch_turn' method='post'><input type="submit" value="Next turn"> </form>
+  <% if @game.player_turn == @game.player_1%>
+    <%= @game.player_1.name %> attacked <%= @game.player_2.name %>!
+    <%= @game.player_2.name %> now has <%= @game.player_2.hit_points %> hitpoints!
+  <% else%>
+    <%= @game.player_2.name %> attacked <%= @game.player_1.name %>!
+    <%= @game.player_1.name %> now has <%= @game.player_1.hit_points %> hitpoints!
+  <% end %>
+  <form action='/switch_turn' method='post'><input type="submit" value="Next turn"> </form>
 </div>

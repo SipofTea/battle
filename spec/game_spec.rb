@@ -11,8 +11,8 @@ describe Game do
     expect(game.player_2.name).to eq('The World')
   end
   it '#attack' do
-    game.attack(test_player_1)
-    expect(test_player_1.hit_points).to eq(50)
+    game.attack
+    expect(test_player_2.hit_points).to eq(50)
   end
   it '#turn_switch' do
     game.turn_switch
